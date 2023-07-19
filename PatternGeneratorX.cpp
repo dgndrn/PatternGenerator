@@ -12,16 +12,37 @@ void checker(int size,int counter) {
 		int x = 0;
 		string piece;
 		int inc;
-		divide = (pattern.length() /  (pattern.length()*0.1)); // bu aralik icin yani 0 dan 10'a kadar daha sonra 10 dan 20 ye kadar 10 20 30 diye artiyor
+		if (pattern.length() > 200) {
+			divide = 85;
+		}
+		else {
+			divide = (pattern.length() / (pattern.length() * 0.1)); // bu aralik icin yani 0 dan 10'a kadar daha sonra 10 dan 20 ye kadar 10 20 30 diye artiyor
+		}
+
 		inc = divide;											// bu uzunluk icin 0 dan 10'a kadar char yazdirilacak 10 tane alt alta olacak gibi
 		cout << "buf = \"\" " << ::endl;
 		for (int j = 0; j < pattern.length(); j=j+inc) {
+		
+			
+			if (inc == 0) {
+				exit(0);                       // burada bitirmemin nedeni program son cout'u yapabilmesi icin donguden sonra bitirmem gerekiyordu
+			}
+			
+			
 			piece = "";
 			for (x; x < divide; x++) {
 				piece += pattern[x];
 			}
+			if ((divide + inc) > pattern.length()) {
+				inc = pattern.length() - divide;
+			}
+
 			divide = divide + inc;
+			
 			cout << "buf+= \"" << piece << "\"" << ::endl;
+
+
+
 		}
 
 
@@ -63,7 +84,7 @@ int main(int argc, char** argv)
 {
 	 int size = atoi(argv[1]);
 
-//	int size = 200;
+//	int size = 3000;
 
 
 	char bigA = 'A';
