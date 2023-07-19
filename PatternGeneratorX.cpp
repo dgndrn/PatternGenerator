@@ -7,8 +7,50 @@ string pattern;
 void checker(int size,int counter) {
 
 	if (counter == size) {
-		cout << pattern;
-		exit(0);
+		
+		int divide;
+		int x = 0;
+		string piece;
+		int inc;
+		divide = (pattern.length() /  (pattern.length()*0.1)); // bu aralik icin yani 0 dan 10'a kadar daha sonra 10 dan 20 ye kadar 10 20 30 diye artiyor
+		inc = divide;											// bu uzunluk icin 0 dan 10'a kadar char yazdirilacak 10 tane alt alta olacak gibi
+		cout << "buf = \"\" " << ::endl;
+		for (int j = 0; j < pattern.length(); j=j+inc) {
+			piece = "";
+			for (x; x < divide; x++) {
+				piece += pattern[x];
+			}
+			divide = divide + inc;
+			cout << "buf+= \"" << piece << "\"" << ::endl;
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+		/*
+
+
+		cout << "buf = \"\" " <<::endl;
+		for (int i = 0; i <= pattern.length(); i=i+divide) {
+
+			cout << "buf+= \"" << pattern <<"\"" << ::endl;
+		}
+		*/
+		
+
+
+
+
+		exit(0); 
 	}
 
 
@@ -21,7 +63,7 @@ int main(int argc, char** argv)
 {
 	 int size = atoi(argv[1]);
 
-
+//	int size = 200;
 
 
 	char bigA = 'A';
@@ -50,9 +92,7 @@ int main(int argc, char** argv)
 				checker(size, pattern.length());
 				num++;
 
-				if (sizeof(pattern) == size) { 
-					return 0;
-				}
+
 			
 			}
 
