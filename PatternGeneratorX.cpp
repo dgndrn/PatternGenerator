@@ -3,7 +3,7 @@
 using namespace std;
 string pattern;
 
-// type 0 normal degil C++ icin normal olan hepsi arka arkaya onu da yaz. Arguman alırken ucuncu arguman yoksa yazdirmiyor ona bak
+
 
 void checker(int size, int counter,int type);
 void Generate(int size,int type);
