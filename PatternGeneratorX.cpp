@@ -14,27 +14,58 @@ void Generate(int size,int type);
 
 int main(int argc, char** argv)
 {
-	 int size = atoi(argv[1]);
-	 int type;
 
-	string format = argv[2];
-	
-	int decision{ format.compare("-f") };
-	if (!decision) {
-		type = 1;
+	string ishelp = argv[1];
+	int dec{ ishelp.compare("-h") and ishelp.compare("-help") and ishelp.compare("--h") and ishelp.compare("-yardim")};
+
+	if (!dec) {
+
+		cout << "\nPatternGenerator uygulamasi bellek tasmalarini gozlemleyebilmek icin patternler uretir.\nKullanim sekli:\nPatternGenerator.exe -py [sayi]\nPatternGenerator.exe [sayi]\n";
+		exit(0);
 	}
 
-	
 
-	else{
-		type = 0;
+	
+	if(argc == 3){
+		int type;
+		int size = atoi(argv[2]);
+		
+		if (size < 9) {
+			cout << "Yetersiz uzunluk!";
+			exit(1);
+		}
+	
+		string format = argv[1];
+
+		int decision{ format.compare("-py") };
+		if (!decision) {
+		 type = 1;
+		}
+		else {
+			cout << "Yanlis giris!";
+			exit(1);
+		}
+
+		Generate(size, type);
+
 	}
 
+	if (argc == 2) {
+		int size = atoi(argv[1]);
+
+		if (size < 9) {
+			cout << "Yetersiz uzunluk!";
+			exit(1);
+		}
+
+		int type = 0;
+		Generate(size, type);
+	}
 
 
 //	int size = 500;
 	
-	Generate(size,type);
+	
 
 
 }
@@ -162,7 +193,7 @@ void checker(int size, int counter,int type) {
 			}
 			else if (type == 0) {
 
-				cout << "\"" << piece << "\"" << ::endl;
+				cout  << piece ;
 
 			}
 
