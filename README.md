@@ -5,3 +5,10 @@
 
 <p>PatternGenerator tool purpose is creating patterns for finding overflow offsets in memory. </p>
 
+## usage
+
+  `gcc pattern.c -w -o pattern`
+
+  `./pattern [pattern size]`
+
+  ![](img/pattern.png)
