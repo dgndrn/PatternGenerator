@@ -5,6 +5,9 @@
 
 <p>PatternGenerator tool purpose is creating patterns for finding overflow offsets in memory. </p>
 
+
+For compiling binary you can use   `gcc binary -w -o outputfile`
+
 ## usage
 
 
