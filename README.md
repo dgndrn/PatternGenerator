@@ -7,8 +7,11 @@
 
 ## usage
 
-  `gcc pattern.c -w -o pattern`
 
   `./pattern [pattern size]`
 
   ![](img/pattern.png)
+
+  `./findoffset key pattern_size`
+
+  ![](img/findoffset.png)
