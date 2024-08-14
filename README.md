@@ -18,3 +18,9 @@ For compiling binary you can use   `gcc binary -w -o outputfile`
   `./findoffset key pattern_size`
 
   ![](img/findoffset.png)
+
+
+  `./fohex hex_key pattern_size`
+
+  ![](img/fohex.png)
+
