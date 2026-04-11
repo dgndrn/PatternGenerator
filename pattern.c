@@ -6,7 +6,6 @@
 void create_pattern(uint64_t sayi, char* bul, int flag);
 void help();
 
-
 int main(int argc,char *argv[]){
    
     if(argc < 3){
